@@ -12,3 +12,6 @@ class Item(models.Model):
     describtion = models.CharField(max_length=150,null = False)
     price = models.DecimalField(decimal_places=2,null = False)
     image = models.ImageField(null = False,upload_to = 'media')
+
+    def __str__(self):
+        return self.title
