@@ -1,0 +1,270 @@
+body {
+    background: linear-gradient(to right, #cb11ab 0, #481173 100%) no-repeat;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.align{
+    display: flex;
+    align-items: flex-end;
+}
+
+.menu {
+    color: white;
+    font-size: 20pt;
+    font-weight: 600;
+}
+
+.menu .col-1 {
+    border: white solid 2px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.icons {
+    font-size: 10pt;
+    text-align: center;
+}
+
+.products {
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+    height: 80%;
+    padding-bottom: 5%;
+}
+
+.slider {
+    overflow: hidden;
+    outline: none;
+}
+
+.slider_item {
+    overflow: hidden;
+    margin: 50px auto;
+    border-radius: 20px;
+    outline: none;
+}
+
+.slick-track {
+    display: flex;
+    outline: none;
+}
+
+.slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+.slick-dots li {
+    list-style: none;
+    margin: 0 1%;
+    outline: none;
+}
+
+.slick-dots button {
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    text-decoration: none;
+    border: 0;
+    background-color: plum;
+    transition: 0.2s linear;
+    outline: none;
+}
+
+.slick-active button {
+    width: 20px;
+    height: 20px;
+    background-color: purple;
+    outline: none;
+}
+
+.slider .slick-arrow {
+    position: absolute;
+    top: 40%;
+    font-size: 0;
+    width: 43px;
+    height: 64px;
+    border: 0px;
+    z-index: -10;
+    outline: none;
+}
+
+button:active,
+button:focus {
+    outline: none;
+}
+
+.slider_img {
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 20px;
+}
+
+.discount-img {
+    width: 100%;
+    margin-top: 10%;
+    margin-right: 10%;
+    border-radius: 20px;
+}
+
+.product-item {
+    margin-top: 20%;
+    height: 80%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.product-href,
+.product-href:hover {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 100%;
+    padding: 0 5% 0 5%;
+    font-weight: bolder;
+}
+
+.lined {
+    color: gray;
+    text-decoration: gray line-through;
+    font-weight: lighter;
+}
+
+.title {
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    color: gray;
+    font-weight: lighter;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 1s ease-out;
+}
+
+.image img:hover {
+    transform: scale(1.2);
+}
+
+.image {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 1s ease-out;
+    border-radius: 20px;
+    margin-top: 10%;
+}
+
+input[type=text] {
+    background-color: white;
+    opacity: 50%;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+}
+
+button[type=submit],
+button[type=submit]:hover,
+button[type=submit]:visited{
+    height: 100%;
+    width: auto;
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    opacity: 50%;
+    width: 10%;
+    display: inline-block;
+}
+
+.search-bar a,
+.search-bar a:hover {
+    opacity: 50%;
+    background-color: white;
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    border-radius: 100%;
+    
+}
+
+.fa-camera {
+    height: 100%;
+    width: 10%;
+    color: grey;
+}
+
+.footer {
+    background-color: #481173;
+    text-align: center;
+    color: white;
+    font-size: 16pt;
+    opacity: 70%;
+    padding-bottom: 3%;
+}
+
+.sidebar {
+    z-index: 10;
+    height: 100%;
+    overflow-x: hidden;
+    width: 0;
+    position: fixed;
+    transition: 0.5s;
+    background-color: white;
+    top: 0;
+}
+
+.category:hover {
+    background-color: #cb11ab;
+    color: white;
+    border-radius: 20px;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    text-decoration: none;
+    color: grey;
+}
+
+.category {
+    display: inline-block;
+    color: grey;
+    text-decoration: none;
+    padding: 0 20%;
+    margin-bottom: 5%;
+    font-size: 16pt;
+}
+
+.categories {
+    margin-top: 20%;
+    margin-left: 10%;
+}
+
+#shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    opacity: 0;
+    background-color: black;
+}
+.fa-search{
+    color: grey;
+}
