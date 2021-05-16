@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div class="products">
+    <div class="assortiment container">
+        <div class="row container">
+            {% for item in items %}
+            <div class="col-3 container">
+                <div class="product-item container">
+                    <a href="" class="product-href">
+                        <img src="{{item.image.url}}" style="width: 100%;border-radius: 1%;height: 70%;"> {{ item.price }}$ 
+                        <span class="lined">
+                            {% if item.previous_price %}
+                              {{ item.previous_price }}$
+                            {% endif %}
+                        </span> <br> <br>
+                        <span class="title">{{ item.title }}</span>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

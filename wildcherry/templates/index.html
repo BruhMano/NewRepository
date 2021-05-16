@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div class="products">
+    <div class="slider">
+        {% for event in events %}
+        {% if event.is_slider %}
+        <div class="slider_item container">
+            <a href=""><img src="{{event.img.url}}" class="slider_img"></a>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="discounts container">
+        <div class="row container">
+            {% for event in events %}
+            {% if event.is_discount %}
+            <div class="col-3 container">
+                <a href="#"><img src="{{event.img.url}}" class="discount-img"></a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="assortiment container">
+        <div class="row container">
+            {% for item in first_line_of_items %}
+            <div class="col-2 container align">
+                <div class="product-item container">
+                    <a href="" class="product-href">
+                        <img src="{{item.image.url}}" style="width: 100%;border-radius: 1%;height: 70%;"> {{ item.price }}$ 
+                        <span class="lined">
+                            {% if item.previous_price %}
+                              {{ item.previous_price }}$
+                            {% endif %}
+                        </span> <br>
+                        <span class="title">{{ item.title }}</span>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    <div class="two-blocks container">
+        <div class="row">
+            {% for event in events %}
+            {% if event.is_two_blocks %}
+            <div class="col-6">
+                <div class="image">
+                    <a href=""><img src="{{event.img.url}}" class="scale"></a>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+        <div class="row container">
+            {% for item in items %}
+            <div class="col-2 container">
+                <div class="product-item container">
+                    <a href="" class="product-href">
+                        <img src="{{item.image.url}}" style="width: 100%;border-radius: 1%;height: 70%;"> {{ item.price }}$ 
+                        <span class="lined">
+                            {% if item.previous_price %}
+                              {{ item.previous_price }}$
+                            {% endif %}
+                        </span> <br> <br>
+                        <span class="title">{{ item.title }}</span>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
