@@ -5,13 +5,23 @@ def index(request):
     first_line_of_items = Item.objects.all()[:6]
     items = Item.objects.all()[6:]
     tags = Tag.objects.all()
+    categories = {}
+    subcategories = []
+    for tag in tags:
+        for subtag in tags:
+            if subtag.parent:
+                if subtag.parent == tag:
+                    subcategories.append(subtag)
+        categories[tag] = subcategories.copy()
+        subcategories.clear()
     events = Event.objects.all()
     return render(request,'index.html',
         {
         'items': items,
         'tags': tags,
         'first_line_of_items': first_line_of_items,
-        'events': events
+        'events': events,
+        'categories': categories
         })
 
 def category_page(request,category):

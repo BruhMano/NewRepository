@@ -11,6 +11,11 @@
     <title>WildCherry</title>
 </head>
 <body>
+    <style>a {
+        text-decoration: none;
+        color: black;
+             }
+    </style>
     <div id='shadow'>XD</div>
 <br><br>
 <div class="container menu">
@@ -19,7 +24,7 @@
             <span class="fas fa-bars" onclick="openbar()"></span>
         </div>
         <div class="col-2">
-            WILDCHERRY
+            <a href="{% url 'index' %}" style="color: white;">WILDCHERRY</a>
         </div>
         <div class="col-5 search-bar container">
             <input type="text" placeholder="Search...">
@@ -37,10 +42,22 @@
 <div class="sidebar" id="Sidebar">
     <a href="#" class="closebtn" onclick="closebar()">&times;</a>
     <div class="categories container">
+        {{categories}}
         {% for tag in tags %}
-        <a href="{% url 'category'  tag.title  %}" class="category">{{ tag.title }}</a>
+        {% if not tag.parent %}
+        <a href="{% url 'category'  tag.title  %}" class="cat category" id='{{tag}}' onmouseover="open_subcategories(event)">{{ tag.title }}</a>
+        {% endif %}
         {% endfor %}
     </div>
+</div>
+<div id="subcategory">
+    {% for tag in tags %}
+    {% for subtag in tags %}
+    {% if subtag.parent == tag %}
+    <a href="{% url 'category'  subtag.title  %}" class="sub category {{tag}}">{{ subtag.title }}</a>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
 </div>
 
     {% block content %}

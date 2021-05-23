@@ -7,7 +7,7 @@ class ItemAdmin(admin.ModelAdmin):
     list_filter = ['id','author','title','price']
 
 class TagAdmin(admin.ModelAdmin):
-    list_display = ['title']
+    list_display = ['title','parent']
 
 class EventAdmin(admin.ModelAdmin):
     list_display = ['id','title','describtion','img','is_slider','is_discount','is_two_blocks']

@@ -6,6 +6,7 @@ User = get_user_model()
 
 class Tag(models.Model):
     title = models.CharField(max_length=30)
+    parent = models.ForeignKey('self',on_delete=CASCADE,null=True,blank=True)
 
     def __str__(self):
         return self.title
