@@ -42,9 +42,10 @@
 <div class="sidebar" id="Sidebar">
     <a href="#" class="closebtn" onclick="closebar()">&times;</a>
     <div class="categories container">
+        {{categories}}
         {% for tag in tags %}
         {% if not tag.parent %}
-        <a href="{% url 'category'  tag.title  %}" class="category" onmousemove="open_subcategoies()">{{ tag.title }}</a>
+        <a href="{% url 'category'  tag.title  %}" class="cat category" id='{{tag}}' onmouseover="open_subcategories(event)">{{ tag.title }}</a>
         {% endif %}
         {% endfor %}
     </div>
@@ -53,7 +54,7 @@
     {% for tag in tags %}
     {% for subtag in tags %}
     {% if subtag.parent == tag %}
-    <a href="{% url 'category'  subtag.title  %}" class="category">{{ subtag.title }}</a>
+    <a href="{% url 'category'  subtag.title  %}" class="sub category {{tag}}">{{ subtag.title }}</a>
     {% endif %}
     {% endfor %}
     {% endfor %}
